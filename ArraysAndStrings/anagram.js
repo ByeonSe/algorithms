@@ -43,7 +43,6 @@ function validAnagram(first, second) {
       // if letter exists, increment, otherwise set to 1
       lookup[letter] ? lookup[letter] += 1 : lookup[letter] = 1;
     }
-    console.log(lookup)
   
     for (let i = 0; i < second.length; i++) {
       let letter = second[i];
@@ -51,6 +50,7 @@ function validAnagram(first, second) {
       if (!lookup[letter]) {
         return false;
       } else {
+        //decrement the value of the pair in the lookup
         lookup[letter] -= 1;
       }
     }
