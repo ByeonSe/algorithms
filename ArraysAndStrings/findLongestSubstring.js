@@ -41,3 +41,9 @@ function findLongestSubstring(str) {
     return length 
 }
 
+/*
+N is the length of the string 
+Time complexity O(n) - as n grows, the number of the time we are looping grows
+spaceComplexity O(n) - as n grows, the size of the dictionary grows
+*/
+
