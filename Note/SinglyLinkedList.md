@@ -185,7 +185,23 @@ class SinglyLinkedList {
     //reversing the linked list 
     // ******* traverse and reverse popular interview question *******
     reverse() {
+        //serving as temp to save the current node
+        let node = this.head;
+        //swap tht head and the tail 
+        this.head = this.tail;
+        this.tail = node;
 
+        let next;
+        let prv = null;
+        for (let i=0; i<this.length; i++) {
+            next = node.next;
+            node.next = prev;
+            //prev now equals to the current node
+            prev = node;
+            //current node now equals to the next node
+            node = next; 
+        }
+        return this;
     }
 
 
@@ -210,3 +226,4 @@ class SinglyLinkedList {
 * Singly linked list are an excellent alternative to arrays when insertion and deletion at the beginning are frequently required
 * arrays contain a built in index whereas linked list do not 
 * the idea of a list data structure that consists of nodes is the foundation for other data structures liike Stacks and Queues 
+*
