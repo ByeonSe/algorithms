@@ -15,7 +15,7 @@ n= 4
 k= 3
 scores = [100, 50, 50, 25]
  */
-
+// the key is to count the rank to make sure rank<= happens 
 function numPlayers (k, scores) {
     if(k <= 0) return 0;
     //sort the array in reversed order 
@@ -23,16 +23,22 @@ function numPlayers (k, scores) {
       let rank = 1;
       let res = 0;
       for(let i = 0; i < scores.length; i++) {
+        //the highest scored deserves an level-up
           if(i === 0) {
               rank = 1;
           } else if(scores[i] !== scores[i - 1]) {
+            // if the current element is not equal to the rank of the next person, then add 
               rank = i + 1;
           }
+          // if ranking is smaller or equal to k(cap on level up) and current score is not 0 then increment res
           if(rank <= k && scores[i] > 0) res++;
+          // if one of this condition does not meet, then break out of the for loop 
+          //it is already sored and we don't level up 0s, so scores[i] === means that we don't have to be in the loop
+          // if rank<=k means that we reached our cap. K is the max
           else break;
       }
       return res;
   }
   
   
-numPlayers (3,[100,50,50,25]) //3
+  numPlayers (3,[100,50,50,25]) //3
