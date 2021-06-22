@@ -31,7 +31,7 @@ function letterCombinations (digits) {
           if (!digits.length) {
             return [];
           }
-    
+            // loop to go through each letter
           for (let previousLetter of previousLetters) {
           // previousLetter => '' it returns ['a', 'b', 'c'];
           // previousLetter => a it returns ['ad', 'ae', 'af'];
